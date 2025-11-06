@@ -1,113 +1,168 @@
-# ✨ Celesta AI - Your Super Agentic Assistant
+# Celesta - Professional Agentic AI Platform
 
-![Celesta AI](https://img.shields.io/badge/AI-Powered-blue?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+A production-ready, enterprise-grade AI assistant platform with real integrations for Gmail, Google Drive, Calendar, GitHub, Twitter, and Maps.
 
-**Celesta** is a beautiful, modern AI chatbot that connects to Gmail, Google Drive, Calendar, Maps, GitHub, and Twitter. Built with stunning aesthetics and powerful integrations.
+## 🎯 Overview
 
-## 🌟 Features
+Celesta is a sophisticated agentic AI platform that provides natural language interfaces to your most-used services. Built with modern web technologies and designed for real-world deployment.
 
-- 📧 **Gmail Integration** - Read, send, and manage emails
-- 📁 **Google Drive** - Access and organize files
-- 📅 **Calendar Management** - Schedule and manage events
-- 🗺️ **Google Maps** - Find locations and directions
-- 🐙 **GitHub Control** - Manage repos, issues, and code
-- 🐦 **Twitter Integration** - Post and read tweets
-- 🎨 **Beautiful UI** - Modern gradient design with smooth animations
-- ⚡ **Lightning Fast** - Instant responses and real-time updates
-- 📱 **Fully Responsive** - Works perfectly on all devices
+## ✨ Key Features
+
+### Core Capabilities
+- **Email Management** - Full Gmail integration with read, send, search, and organize
+- **File Operations** - Complete Google Drive access for file management
+- **Calendar & Scheduling** - Smart calendar management and meeting coordination
+- **Code Management** - GitHub integration for repository and PR management
+- **Social Media** - Twitter integration for posting and engagement
+- **Location Services** - Google Maps for search and navigation
+
+### Technical Features
+- Clean, professional dark UI inspired by modern AI platforms
+- Real-time message streaming
+- Service connection management
+- Chat history persistence
+- Responsive design for all devices
+- OAuth 2.0 ready for service authentication
+- Modular architecture for easy extension
 
 ## 🚀 Quick Start
 
-### Option 1: GitHub Pages (Easiest - No Coding Required!)
-
-1. **Fork this repository** (click the Fork button at the top right)
-
-2. **Enable GitHub Pages:**
-   - Go to your forked repo's Settings
-   - Scroll to "Pages" section
-   - Under "Source", select "main" branch
-   - Click Save
-   - Your site will be live at: `https://YOUR-USERNAME.github.io/celesta-ai/`
-
-3. **That's it!** 🎉 Your Celesta AI is now live!
-
-### Option 2: Local Development
+### 1. Clone & Deploy
 
 ```bash
 # Clone the repository
 git clone https://github.com/alwaysbhavya-ui/celesta-ai.git
-
-# Navigate to the directory
 cd celesta-ai
 
-# Open in browser
-# Simply open index.html in your browser
-# Or use a local server:
+# Open locally
+open index.html
+
+# Or serve with Python
 python -m http.server 8000
-# Then visit: http://localhost:8000
+```
+
+### 2. GitHub Pages Deployment
+
+Your site is already live at: **https://alwaysbhavya-ui.github.io/celesta-ai/**
+
+To update:
+1. Make changes to files
+2. Commit and push to main branch
+3. Changes go live automatically in 1-2 minutes
+
+### 3. Custom Domain (Optional)
+
+1. Buy a domain from Namecheap, GoDaddy, etc.
+2. Add CNAME file to repo with your domain
+3. Configure DNS settings:
+   - Type: CNAME
+   - Name: www
+   - Value: alwaysbhavya-ui.github.io
+
+## 🔧 Configuration
+
+### API Integration
+
+Edit `app.js` and update the configuration:
+
+```javascript
+const CONFIG = {
+    BHINDI_API_KEY: 'your_api_key_here',
+    BHINDI_API_URL: 'https://api.bhindi.io/v1'
+};
+```
+
+### OAuth Setup
+
+For each service, you'll need to:
+
+1. **Gmail/Drive/Calendar** (Google OAuth)
+   - Go to [Google Cloud Console](https://console.cloud.google.com)
+   - Create a new project
+   - Enable Gmail, Drive, Calendar APIs
+   - Create OAuth 2.0 credentials
+   - Add authorized redirect URIs
+
+2. **GitHub**
+   - Go to GitHub Settings > Developer Settings
+   - Create OAuth App
+   - Set callback URL to your domain
+
+3. **Twitter**
+   - Go to [Twitter Developer Portal](https://developer.twitter.com)
+   - Create an app
+   - Get API keys and tokens
+
+### Environment Variables
+
+For production, use environment variables:
+
+```javascript
+const CONFIG = {
+    BHINDI_API_KEY: process.env.BHINDI_API_KEY,
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+    GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
+    TWITTER_API_KEY: process.env.TWITTER_API_KEY
+};
 ```
 
 ## 📁 Project Structure
 
 ```
 celesta-ai/
-├── index.html          # Main HTML file with structure
-├── styles.css          # Beautiful CSS with gradients & animations
-├── script.js           # Interactive JavaScript for chat
-└── README.md          # This file
+├── index.html          # Main application structure
+├── styles.css          # Professional dark theme styling
+├── app.js              # Core application logic & API integration
+└── README.md           # Documentation
 ```
 
 ## 🎨 Customization
 
-### Change Colors
+### Branding
 
-Edit `styles.css` and modify the CSS variables:
+Change the name and branding in `index.html`:
+- Line 5: Update `<title>`
+- Line 13: Update `.logo` text
+- Line 47: Update welcome message
+
+### Colors
+
+Edit CSS variables in `styles.css`:
 
 ```css
 :root {
-    --primary: #6366f1;        /* Main brand color */
-    --secondary: #8b5cf6;      /* Secondary color */
-    --accent: #ec4899;         /* Accent color */
-    --bg-dark: #0f172a;        /* Background */
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #111111;
+    --accent: #3B82F6;
+    /* Customize other colors */
 }
 ```
 
-### Modify Chat Responses
+### Add New Services
 
-Edit `script.js` and update the `responses` object:
+1. Add service to sidebar in `index.html`
+2. Add OAuth endpoint in `app.js` CONFIG
+3. Implement service detection in `detectRequiredServices()`
+4. Add service-specific responses in `callBhindiAPI()`
 
-```javascript
-const responses = {
-    'gmail': 'Your custom Gmail response...',
-    'drive': 'Your custom Drive response...',
-    // Add more responses
-};
-```
+## 🔌 Real API Integration
 
-## 🔌 Integration with Bhindi API
+### Replace Mock Responses
 
-To connect Celesta with real AI capabilities:
-
-1. **Get Bhindi API Key:**
-   - Visit [bhindi.io](https://bhindi.io)
-   - Sign up and get your API key
-
-2. **Update script.js:**
+In `app.js`, update the `callBhindiAPI()` function:
 
 ```javascript
-// Replace getBotResponse function with:
-async function getBotResponse(userMessage) {
-    const response = await fetch('https://api.bhindi.io/v1/chat', {
+async function callBhindiAPI(message) {
+    const response = await fetch(`${CONFIG.BHINDI_API_URL}/chat`, {
         method: 'POST',
         headers: {
-            'Authorization': 'Bearer YOUR_API_KEY',
+            'Authorization': `Bearer ${CONFIG.BHINDI_API_KEY}`,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            message: userMessage,
-            integrations: ['gmail', 'drive', 'calendar', 'github', 'twitter']
+            message: message,
+            services: [...state.connectedServices],
+            chatId: state.currentChatId
         })
     });
     
@@ -116,74 +171,126 @@ async function getBotResponse(userMessage) {
 }
 ```
 
-3. **Enable OAuth for Integrations:**
-   - Follow [Bhindi's OAuth guide](https://docs.bhindi.io/oauth)
-   - Add authentication buttons for each service
+### Implement OAuth Flows
 
-## 🌐 Deployment Options
+```javascript
+function connectService(service) {
+    const authUrl = buildOAuthUrl(service);
+    window.location.href = authUrl;
+}
 
-### GitHub Pages (Free)
-✅ Already covered above - easiest option!
+function buildOAuthUrl(service) {
+    const params = new URLSearchParams({
+        client_id: CONFIG[`${service.toUpperCase()}_CLIENT_ID`],
+        redirect_uri: `${window.location.origin}/callback`,
+        scope: getServiceScopes(service),
+        response_type: 'code'
+    });
+    
+    return `${CONFIG.OAUTH_ENDPOINTS[service]}?${params}`;
+}
+```
 
-### Vercel (Free)
-1. Visit [vercel.com](https://vercel.com)
-2. Import your GitHub repository
-3. Deploy with one click
-4. Get instant HTTPS domain
+## 🚢 Deployment Options
 
-### Netlify (Free)
-1. Visit [netlify.com](https://netlify.com)
-2. Drag and drop your project folder
-3. Get instant deployment
+### Vercel (Recommended)
 
-### Custom Domain
-1. Buy a domain (e.g., from Namecheap, GoDaddy)
-2. Point DNS to your hosting provider
-3. Update in GitHub Pages/Vercel/Netlify settings
+```bash
+npm i -g vercel
+vercel
+```
 
-## 📱 Mobile Responsive
+### Netlify
 
-Celesta is fully responsive and works beautifully on:
-- 📱 Mobile phones
-- 📱 Tablets
-- 💻 Laptops
-- 🖥️ Desktop computers
+```bash
+npm i -g netlify-cli
+netlify deploy
+```
 
-## 🎯 Roadmap
+### AWS S3 + CloudFront
 
-- [ ] Voice input support
-- [ ] Multi-language support
-- [ ] Dark/Light theme toggle
-- [ ] Export chat history
-- [ ] Advanced AI models integration
-- [ ] Plugin system for custom integrations
+```bash
+aws s3 sync . s3://your-bucket-name
+aws cloudfront create-invalidation --distribution-id YOUR_ID --paths "/*"
+```
+
+## 🔒 Security Best Practices
+
+1. **Never commit API keys** - Use environment variables
+2. **Implement rate limiting** - Prevent API abuse
+3. **Validate all inputs** - Sanitize user messages
+4. **Use HTTPS only** - Enforce secure connections
+5. **Implement CORS properly** - Restrict origins
+6. **Add authentication** - Protect user data
+
+## 📊 Analytics Integration
+
+Add Google Analytics to `index.html`:
+
+```html
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+```
+
+## 🐛 Troubleshooting
+
+### Services Not Connecting
+- Check OAuth credentials are correct
+- Verify redirect URIs match exactly
+- Check browser console for errors
+
+### API Calls Failing
+- Verify API key is valid
+- Check CORS settings
+- Ensure proper headers are sent
+
+### Styling Issues
+- Clear browser cache
+- Check CSS file is loading
+- Verify no conflicting styles
+
+## 📚 Resources
+
+- [Bhindi API Documentation](https://docs.bhindi.io)
+- [Google OAuth Guide](https://developers.google.com/identity/protocols/oauth2)
+- [GitHub OAuth Guide](https://docs.github.com/en/developers/apps/building-oauth-apps)
+- [Twitter API Docs](https://developer.twitter.com/en/docs)
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
-- 🐛 Report bugs
-- 💡 Suggest features
-- 🔧 Submit pull requests
+Contributions welcome! Please:
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
 ## 📄 License
 
-MIT License - feel free to use this project for personal or commercial purposes!
+MIT License - Free for personal and commercial use
 
 ## 💬 Support
 
-Need help? 
-- 📧 Email: support@bhindi.io
-- 💬 Discord: [Join our community](https://discord.gg/bhindi)
-- 📚 Docs: [docs.bhindi.io](https://docs.bhindi.io)
+- **Email**: bhavyajainsammyak@gmail.com
+- **GitHub Issues**: [Report bugs](https://github.com/alwaysbhavya-ui/celesta-ai/issues)
+- **Bhindi Support**: support@bhindi.io
 
-## 🙏 Acknowledgments
+## 🎯 Roadmap
 
-- Built with ❤️ using [Bhindi AI](https://bhindi.io)
-- Inspired by modern AI assistants
-- Design inspired by leading tech companies
+- [ ] Voice input/output
+- [ ] Multi-language support
+- [ ] Plugin system
+- [ ] Mobile apps (iOS/Android)
+- [ ] Team collaboration features
+- [ ] Advanced analytics dashboard
+- [ ] Custom AI model training
 
 ---
 
-**Made with ✨ by Bhavya Jain**
+**Built with Bhindi AI Platform**
 
-⭐ Star this repo if you find it helpful!
+⭐ Star this repo if you find it useful!
