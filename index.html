@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celesta - Your Super Agentic AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">Celesta</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#integrations">Integrations</a>
+                <a href="#chat" class="btn-primary">Try Celesta</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>🚀 Powered by Advanced AI</span>
+            </div>
+            <h1 class="hero-title">
+                Meet <span class="gradient-text">Celesta</span><br>
+                Your Super Agentic AI Assistant
+            </h1>
+            <p class="hero-description">
+                Connect Gmail, Drive, Calendar, Maps, GitHub & Twitter. Let Celesta handle your digital life with intelligence and elegance.
+            </p>
+            <div class="hero-buttons">
+                <a href="#chat" class="btn-hero-primary">Start Chatting</a>
+                <a href="#features" class="btn-hero-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <span class="card-icon">📧</span>
+                <span>Gmail Integration</span>
+            </div>
+            <div class="floating-card card-2">
+                <span class="card-icon">📁</span>
+                <span>Drive Access</span>
+            </div>
+            <div class="floating-card card-3">
+                <span class="card-icon">📅</span>
+                <span>Calendar Sync</span>
+            </div>
+            <div class="floating-card card-4">
+                <span class="card-icon">🐙</span>
+                <span>GitHub Control</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>Powerful Features</h2>
+            <p>Everything you need in one intelligent assistant</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Intelligent Understanding</h3>
+                <p>Natural language processing that understands context and intent</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <h3>Multi-Platform Integration</h3>
+                <p>Seamlessly connect all your favorite tools and services</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>Instant responses and real-time actions across platforms</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure & Private</h3>
+                <p>Your data stays yours with enterprise-grade security</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Task Automation</h3>
+                <p>Automate repetitive tasks and boost productivity</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Always Available</h3>
+                <p>24/7 access from any device, anywhere in the world</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integrations" class="integrations">
+        <div class="section-header">
+            <h2>Powerful Integrations</h2>
+            <p>Connect with your favorite tools</p>
+        </div>
+        <div class="integrations-grid">
+            <div class="integration-card">
+                <div class="integration-icon gmail">📧</div>
+                <h3>Gmail</h3>
+                <p>Read, send, and manage emails</p>
+            </div>
+            <div class="integration-card">
+                <div class="integration-icon drive">📁</div>
+                <h3>Google Drive</h3>
+                <p>Access and organize files</p>
+            </div>
+            <div class="integration-card">
+                <div class="integration-icon calendar">📅</div>
+                <h3>Calendar</h3>
+                <p>Schedule and manage events</p>
+            </div>
+            <div class="integration-card">
+                <div class="integration-icon maps">🗺️</div>
+                <h3>Google Maps</h3>
+                <p>Find locations and directions</p>
+            </div>
+            <div class="integration-card">
+                <div class="integration-icon github">🐙</div>
+                <h3>GitHub</h3>
+                <p>Manage repos and code</p>
+            </div>
+            <div class="integration-card">
+                <div class="integration-icon twitter">🐦</div>
+                <h3>Twitter</h3>
+                <p>Post and read tweets</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Section -->
+    <section id="chat" class="chat-section">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-header-left">
+                    <div class="status-indicator"></div>
+                    <div>
+                        <h3>Celesta AI</h3>
+                        <p class="status-text">Online & Ready</p>
+                    </div>
+                </div>
+                <div class="chat-header-right">
+                    <button class="icon-btn" id="clearChat">🗑️</button>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">✨</div>
+                    <div class="message-content">
+                        <p>Hello! I'm Celesta, your super agentic AI assistant. I can help you with:</p>
+                        <ul>
+                            <li>📧 Managing your Gmail</li>
+                            <li>📁 Organizing Google Drive files</li>
+                            <li>📅 Scheduling calendar events</li>
+                            <li>🗺️ Finding locations on Maps</li>
+                            <li>🐙 Managing GitHub repositories</li>
+                            <li>🐦 Posting on Twitter</li>
+                        </ul>
+                        <p>What would you like to do today?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="quick-actions">
+                    <button class="quick-action-btn" data-action="Check my latest emails">📧 Check Emails</button>
+                    <button class="quick-action-btn" data-action="Show my calendar for today">📅 Today's Schedule</button>
+                    <button class="quick-action-btn" data-action="List my GitHub repositories">🐙 My Repos</button>
+                </div>
+                <div class="chat-input-wrapper">
+                    <input type="text" id="chatInput" placeholder="Ask Celesta anything..." />
+                    <button id="sendBtn" class="send-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M2 10L18 2L10 18L8 11L2 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="logo">
+                    <span class="logo-icon">✨</span>
+                    <span class="logo-text">Celesta</span>
+                </div>
+                <p>Your intelligent AI assistant for the modern world</p>
+            </div>
+            <div class="footer-right">
+                <p>Built with ❤️ using Bhindi AI</p>
+                <p class="footer-links">
+                    <a href="https://github.com/alwaysbhavya-ui/celesta-ai">GitHub</a>
+                    <span>•</span>
+                    <a href="https://bhindi.io">Powered by Bhindi</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
