@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celesta - Agentic AI Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="logo">Celesta</h1>
+            <button class="new-chat-btn" id="newChatBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12h14"/>
+                </svg>
+                New Chat
+            </button>
+        </div>
+
+        <div class="chat-history" id="chatHistory">
+            <div class="history-section">
+                <h3>Today</h3>
+                <div class="history-item active">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <span>New conversation</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="integration-status">
+                <h4>Connected Services</h4>
+                <div class="service-list">
+                    <div class="service-item" data-service="gmail">
+                        <span class="service-icon">📧</span>
+                        <span>Gmail</span>
+                        <span class="status-dot disconnected"></span>
+                    </div>
+                    <div class="service-item" data-service="drive">
+                        <span class="service-icon">📁</span>
+                        <span>Drive</span>
+                        <span class="status-dot disconnected"></span>
+                    </div>
+                    <div class="service-item" data-service="calendar">
+                        <span class="service-icon">📅</span>
+                        <span>Calendar</span>
+                        <span class="status-dot disconnected"></span>
+                    </div>
+                    <div class="service-item" data-service="github">
+                        <span class="service-icon">⚡</span>
+                        <span>GitHub</span>
+                        <span class="status-dot disconnected"></span>
+                    </div>
+                    <div class="service-item" data-service="twitter">
+                        <span class="service-icon">𝕏</span>
+                        <span>Twitter</span>
+                        <span class="status-dot disconnected"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="user-profile">
+                <div class="avatar">B</div>
+                <div class="user-info">
+                    <span class="user-name">Bhavya Jain</span>
+                    <span class="user-email">bhavyajainsammyak@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="chat-container">
+            <div class="messages-container" id="messagesContainer">
+                <div class="welcome-screen">
+                    <h1>Celesta</h1>
+                    <p>Your intelligent agentic AI assistant</p>
+                    
+                    <div class="capabilities-grid">
+                        <div class="capability-card">
+                            <div class="capability-icon">📧</div>
+                            <h3>Email Management</h3>
+                            <p>Read, compose, and manage emails with natural language</p>
+                            <button class="try-btn" data-prompt="Check my latest unread emails">Try it</button>
+                        </div>
+                        <div class="capability-card">
+                            <div class="capability-icon">📁</div>
+                            <h3>File Operations</h3>
+                            <p>Search, organize, and manage your Drive files</p>
+                            <button class="try-btn" data-prompt="Show me my recent documents">Try it</button>
+                        </div>
+                        <div class="capability-card">
+                            <div class="capability-icon">📅</div>
+                            <h3>Calendar & Scheduling</h3>
+                            <p>Create events, check availability, manage meetings</p>
+                            <button class="try-btn" data-prompt="What's on my calendar today?">Try it</button>
+                        </div>
+                        <div class="capability-card">
+                            <div class="capability-icon">⚡</div>
+                            <h3>Code & GitHub</h3>
+                            <p>Manage repositories, review PRs, commit code</p>
+                            <button class="try-btn" data-prompt="List my GitHub repositories">Try it</button>
+                        </div>
+                        <div class="capability-card">
+                            <div class="capability-icon">𝕏</div>
+                            <h3>Social Media</h3>
+                            <p>Post tweets, read timeline, engage with content</p>
+                            <button class="try-btn" data-prompt="Show my Twitter timeline">Try it</button>
+                        </div>
+                        <div class="capability-card">
+                            <div class="capability-icon">🗺️</div>
+                            <h3>Maps & Location</h3>
+                            <p>Find places, get directions, explore locations</p>
+                            <button class="try-btn" data-prompt="Find coffee shops near me">Try it</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <button class="attach-btn" id="attachBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+                        </svg>
+                    </button>
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Ask Celesta to help with emails, files, calendar, code, or anything else..."
+                        rows="1"
+                    ></textarea>
+                    <button class="send-btn" id="sendBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="model-info">Powered by Bhindi AI • GPT-4 Turbo</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Connection Modal -->
+    <div class="modal" id="connectionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Connect Services</h2>
+                <button class="close-btn" id="closeModal">×</button>
+            </div>
+            <div class="modal-body">
+                <p>To use Celesta's full capabilities, connect your services:</p>
+                <div class="connection-options">
+                    <button class="connect-btn" data-service="gmail">
+                        <span class="service-icon">📧</span>
+                        <div>
+                            <strong>Gmail</strong>
+                            <small>Read and send emails</small>
+                        </div>
+                        <span class="connect-status">Connect</span>
+                    </button>
+                    <button class="connect-btn" data-service="drive">
+                        <span class="service-icon">📁</span>
+                        <div>
+                            <strong>Google Drive</strong>
+                            <small>Access and manage files</small>
+                        </div>
+                        <span class="connect-status">Connect</span>
+                    </button>
+                    <button class="connect-btn" data-service="calendar">
+                        <span class="service-icon">📅</span>
+                        <div>
+                            <strong>Google Calendar</strong>
+                            <small>Manage events and meetings</small>
+                        </div>
+                        <span class="connect-status">Connect</span>
+                    </button>
+                    <button class="connect-btn" data-service="github">
+                        <span class="service-icon">⚡</span>
+                        <div>
+                            <strong>GitHub</strong>
+                            <small>Manage repositories and code</small>
+                        </div>
+                        <span class="connect-status">Connect</span>
+                    </button>
+                    <button class="connect-btn" data-service="twitter">
+                        <span class="service-icon">𝕏</span>
+                        <div>
+                            <strong>Twitter</strong>
+                            <small>Post and read tweets</small>
+                        </div>
+                        <span class="connect-status">Connect</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
